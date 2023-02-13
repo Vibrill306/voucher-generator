@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .container,
+    table {
+      margin: 0px auto;
+      width: 1000px;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    .addvender:hover {
+      background-color: white !important;
+      color: black !important;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a href="vender_dashboard.html">
+        <img class="navbar-brand" src="images/logo-light.png" height="60px" width="60px"></img>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Profile Settings</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="vender_dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="">Settings</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Authentication
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Sign in</a></li>
+                <li><a class="dropdown-item" href="#">Add Vendor</a></li>
+                <!-- <li>
+                  <hr class="dropdown-divider">
+                </li> -->
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard"
+      style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+      <h2>Vender Dashboard</h2>
+
+      <button class="addvender" onclick="window.location='customer_details.html'"
+        style="background-color: black; color: white; width: 120px; height: 40px;">Add Customer</button>
+    </div>
+  </div>
+
+
+  <table>
+    <tr>
+      <th>Customer_Id</th>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Phone No.</th>
+      <th>City</th>
+      <th>Voucher</th>
+    </tr>
+    <tbody id="data">
+
+    </tbody>
+
+    <!-- <tr>
+    <td>63d8f364bd6b475117dcebdb</td>
+    <td>Puma</td>
+    <td>puma@gmail.com</td>
+    <td>9999999999</td>
+    <td>Noida</td>
+  </tr> -->
+  </table>
+  <div class="container">
+    <button class="" style="background-color: black; color: white; width: 100px; height: 40px; margin-top: 100px;"
+      id="logout" value="logout" onclick="window.location='/vender_logout'">Logout</button>
+  </div>
+
+
+  <script src="js/bootstrap.bundle.js"></script>
+  <script>
+
+    fetch("/vender_dash").then(
+      res => {
+        res.json().then(
+          data => {
+            console.log(data);
+            if (data.length > 0) {
+
+              var temp = "";
+              data.forEach((itemData) => {
+                temp += "<tr>";
+                temp += "<td>" + itemData._id + "</td>";
+                temp += "<td>" + itemData.name + "</td>";
+                temp += "<td>" + itemData.email + "</td>";
+                temp += "<td>" + itemData.phone + "</td>";
+                temp += "<td>" + itemData.city + "</td>";
+                temp += "<td>" + itemData.voucher + "</td>";
+              });
+              document.getElementById('data').innerHTML = temp;
+            }
+          }
+        )
+      }
+    )
+
+
+  </script>
+</body>
+
+</html>

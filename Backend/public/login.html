@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/login.css">
+  <title>Admin Login</title>
+</head>
+
+<body>
+
+  <div class="container-first">
+
+    <div class="container">
+
+
+      <div class="row" style="background-color: whitesmoke;">
+
+
+        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center;">
+          <p><img src="images/resort.png" height="50px" width="50px" alt=""> &nbsp; &nbsp;Vibrill Hospitality Ltd.</p>
+          <div class="col-md-5-child">
+            <h3 class="text-center text-white">Start your journey with us</h3>
+            <h3 class="text-center">It brings together your tasks, projects, timelines, files and more</h3>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-7">
+
+
+          <form class="modal-content animate p-5" action="/login" method="POST">
+            <div class="imgcontainer">
+              <img src="images/logo-light.png" class="mt-3" alt="logo" height="70px" width="80px">
+            </div>
+            <h3 class="text-center" style="color: #0d6efd; font-size: 21px; font-family: sans-serif;">Welcome Back !
+            </h3>
+            <p class="text-center" style="color: #878a99; font-size: 14px;">Sign in to continue</p>
+
+            <div class="container">
+              <label for="email"
+                style="color: #06283d; font-size: 15px; font-family: sans-serif; letter-spacing: .5px;">Username/Email</label>
+              <input type="text" placeholder="Enter Username" id="email" name="email" required>
+
+              <label for="password"
+                style="color: #06283d; font-size: 15px; font-family: sans-serif; letter-spacing: .5px;">Password</label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+
+              <div class="form-check my-2">
+                <input class="form-check-input" type="checkbox" name="remember" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked"
+                  style="font-size: 14px; font-family: sans-serif; color: #06283d;">
+                  Remember Me
+                </label>
+              </div>
+              <button class="btn btn-primary w-100 my-2" type="submit" id="submit" value="submit">Login</button>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+   
+  </script>
+</body>
+
+</html>
