@@ -67,11 +67,12 @@ userSchema.pre('save',function(){
     this.confirmPassword = undefined;
 })
 
-userSchema.pre('save',async function(){
+userSchema.pre('save',async function(next){
     let salt = await bcrypt.genSalt();
     let hashedString = await bcrypt.hash(this.password,salt);
     console.log(hashedString);
     this.password = hashedString 
+    next()
 })
 
 userSchema.methods.createResetToken = function(){

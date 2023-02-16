@@ -1,5 +1,7 @@
 const mongoose  = require('mongoose');
 const emailValidate = require('email-validator');
+const bcrypt=require('bcrypt')
+const crypto = require('crypto')
 
 const db_link = 'mongodb+srv://admin:IVaCDFjcRtf5oF3z@cluster0.rcbcaho.mongodb.net/?retryWrites=true&w=majority';
 
@@ -43,12 +45,26 @@ const venderSchema = mongoose.Schema({
         required:true
     },
     voucher:{
-        type:String,
-        voucher:['Movie Voucher','Resort Voucher','Holiday Voucher'],
+        type:Object,
+        "voucher1":['Movie Voucher'],
+        "voucher2":['Resort Voucher'],
+        "voucher3":['Holiday Voucher'],
         default:'Movie Voucher'
     },
 })
 
+
+venderSchema.pre('save',function(){
+    this.confirmPassword = undefined;
+})
+
+venderSchema.pre('save',async function(next){
+    let salt = await bcrypt.genSalt();
+    let hashedString = await bcrypt.hash(this.password,salt);
+    console.log(hashedString);
+    this.password = hashedString 
+    next()
+})
 
 const venderModel = mongoose.model('venderModel',venderSchema);
 

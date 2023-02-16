@@ -2,229 +2,301 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendor Dashboard</title>
+  <title>Login Success</title>
   <link rel="stylesheet" href="css/bootstrap.css">
-  <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    input:checked+.slider {
-      background-color: #2196F3;
-    }
-
-    input:focus+.slider {
-      box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked+.slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-      border-radius: 34px;
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
-    }
-
-
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .container,
-    table {
-      margin: 0px auto;
-      width: 1000px;
-    }
-
-    td,
-    th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-
-    .addvender:hover {
-      background-color: white !important;
-      color: black !important;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="css/login_success.css">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a href="vender_dashboard.html">
-        <img class="navbar-brand" src="images/logo-light.png" height="60px" width="60px"></img>
-      </a>
+  <div class="top-date-bar py-1 fw-bold"
+    style="display: flex; justify-content: space-between; color: white; background-color: #31404a;">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-        aria-controls="offcanvasDarkNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Profile Settings</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-            aria-label="Close"></button>
+    <div class="date-time-parent ms-2"
+      style="display: flex; justify-content: space-evenly; align-items: center; font-size: 13px; color: #ffffff73;">
+      <i class="fa-solid fa-clock"></i>
+      <div id="date-time" class="ps-2"></div>
+    </div>
+
+    <div class="col-md-4"
+      style="display: flex; justify-content: space-around; align-items: center; font-size: 13px; color: #ffffff73;">
+      <span><i class="fa-solid fa-envelope"></i> info@vibrillhospitality.com</span>
+      <span><i class="fa-solid fa-globe"></i> www.vibrillhospitality.com</span>
+    </div>
+
+    <div class="english-language me-2">
+      <span style="font-size: 13px; color: #ffffff73;"><i class="fa-solid fa-language"></i> English</span>
+    </div>
+
+  </div>
+
+  <div class="side-navbar pt-4">
+
+    <div class="container-fluid">
+      <div class="row" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); height: 55px; ">
+
+        <div class="col-md-2" style="height: 100vh; ">
+          <div class="logo-img" style="display: flex; justify-content: center;">
+            <img src="images/logo-light.png" height="45px" width="50px" alt="">
+          </div>
+
+          <div class="menu pt-3">
+            <ul style="list-style: none;">
+              <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li>
+              <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                <a href="vender_dashboard.html" style="color: #444;"><i class="fa-solid fa-gauge" style="color: #444;"></i>&nbsp; Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="menu pt-3">
+
+
+            <ul style="list-style: none;">
+              <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">PAGES</li>
+
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a href="customer_details.html" style="color: #444;"><i class="fa-solid fa-people-group"></i>&nbsp; Add Customer</a></li>
+                </ul>
+              </div>
+
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a onclick="window.location='/vender_logout'"  style="cursor:pointer; color: #444;"><i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout</a></li>
+                </ul>
+              </div>
+
+            </ul>
+          </div>
         </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="vender_dashboard.html">Dashboard</a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Profile
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="">Settings</a></li>
+
+        <div class="col-md-10"
+          style="display: flex; justify-content: space-between; align-items: center; height: 40px;">
+
+          <div class="left-menu"
+            style="display: flex; justify-content: space-between; align-items: center; width: 30%;">
+
+            <div class="bar"><i class="fa-solid fa-bars pt-2" style="cursor: pointer; font-size: large;"></i></div>
+
+
+
+
+            <div class="form">
+              <form class="d-flex" role="search" style="width: 120%;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+
+          </div>
+
+
+          <div class="right-menu"
+            style="display: flex; justify-content: space-between; align-items: center; width: 28%; height: 40px;">
+
+            <div class="dropdown">
+              <i class="fa-solid fa-link  px-2 pt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                style="cursor: pointer; font-size: large;"></i>
+              <ul class="dropdown-menu">
+                <li class="text-center" style="color:#919da9; font-size: 14px;  letter-spacing: 1px;">Go To Webapp</li>
+
+                <div class="web-list">
+                  <li><a class="dropdown-item" href="https://www.vibrillhospitality.com"><i
+                        class="fa-solid fa-globe"></i>&nbsp; www.vibrillhospitality.com</a></li>
+                  <li><a class="dropdown-item" href="https://www.vibrill.com"><i
+                        class="fa-solid fa-globe"></i>&nbsp; www.vibrill.com</a></li>
+                </div>
+
               </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Authentication
+            </div>
+
+            <button class="btn btn-primary" id="btn-full-screen"
+              style="cursor: pointer; font-weight: 500; font-size: large; padding: 10px 10px; font-size: 11px!important;">Go Fullscreen</button>
+
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="padding: 3px 10px; display: flex; justify-content: space-between; align-items: center; background-color: silver; color: #343a40; font-size: 14px; font-family: sans-serif;">
+                <img src="images/man.png" height="30px" width="30px" alt=""> <span class="ps-1"
+                  style="color: #343a40;">Vendor</span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Sign in</a></li>
-                <li><a class="dropdown-item" href="#">Add Vendor</a></li>
-                <!-- <li>
-                  <hr class="dropdown-divider">
-                </li> -->
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
+
+              <ul class="dropdown-menu">
+                
+                <li style="cursor:pointer"><a class="dropdown-item" onclick="window.location='/vender_logout'" ><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
               </ul>
-            </li>
-          </ul>
+            </div>
+
+          </div>
+
+
         </div>
+
+      </div>
+
+      <div class="row offset-md-2">
+
+        <div class="col-md-12">
+          <div class="row">
+
+            <!-- <div class="row"> -->
+           
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            <div class="col-md-4">
+
+              <div class="card my-3">
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase"
+                    style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Customers</strong>
+                  </h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong><span id="customer-count"></span></strong></p>
+                    <img src="images/audience.png" height="40px" width="40px" alt="">
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="col-xl-12 pt-3">
+            <div class="card">
+              <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Customers</h4>
+                <div class="flex-shrink-0">
+                  <div class="dropdown card-header-dropdown">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <table id="customer-table">
+                  <tr style="font-size: 15px;">
+                    <th>S No.</th>
+                    <th>Customer_Id</th>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>City</th>
+                    <th>Voucher</th>
+                  </tr>
+                  <tbody id="data">
+                
+                  </tbody>
+                </table>
+                </table>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
-  </nav>
 
-  <div class="container">
-    <div class="dashboard"
-      style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
-      <h2>Vender Dashboard</h2>
 
-      <button class="addvender" onclick="window.location='customer_details.html'"
-        style="background-color: black; color: white; width: 120px; height: 40px;">Add Customer</button>
-    </div>
   </div>
 
 
-  <table>
-    <tr>
-      <th>Customer_Id</th>
-      <th>Customer Name</th>
-      <th>Email</th>
-      <th>Phone No.</th>
-      <th>City</th>
-      <th>Voucher</th>
-    </tr>
-    <tbody id="data">
-
-    </tbody>
-
-    <!-- <tr>
-    <td>63d8f364bd6b475117dcebdb</td>
-    <td>Puma</td>
-    <td>puma@gmail.com</td>
-    <td>9999999999</td>
-    <td>Noida</td>
-  </tr> -->
-  </table>
-  <div class="container">
-    <button class="" style="background-color: black; color: white; width: 100px; height: 40px; margin-top: 100px;"
-      id="logout" value="logout" onclick="window.location='/vender_logout'">Logout</button>
-  </div>
 
 
-  <script src="js/bootstrap.bundle.js"></script>
+
+
+  <!-- javaScript for login-success page -->
   <script>
 
     fetch("/vender_dash").then(
-      res => {
-        res.json().then(
-          data => {
-            console.log(data);
-            if (data.length > 0) {
-
-              var temp = "";
-              data.forEach((itemData) => {
-                temp += "<tr>";
-                temp += "<td>" + itemData._id + "</td>";
-                temp += "<td>" + itemData.name + "</td>";
-                temp += "<td>" + itemData.email + "</td>";
-                temp += "<td>" + itemData.phone + "</td>";
-                temp += "<td>" + itemData.city + "</td>";
-                temp += "<td>" + itemData.voucher + "</td>";
-              });
-              document.getElementById('data').innerHTML = temp;
-            }
+    res => {
+      res.json().then(
+        data => {
+          console.log(data);
+          if (data.length > 0) {
+  
+            var temp = "";
+            data.forEach((itemData,i) => {
+              temp += "<tr>";
+              temp += "<td>" + `${i+1}` + "</td>"  
+              temp += "<td>" + itemData._id + "</td>";
+              temp += "<td>" + itemData.name + "</td>";
+              temp += "<td>" + itemData.email + "</td>";
+              temp += "<td>" + itemData.phone + "</td>";
+              temp += "<td>" + itemData.city + "</td>";
+              temp += "<td>" + itemData.voucher + "</td>";
+            });
+            document.getElementById('data').innerHTML = temp;
+            const customerTable = document.getElementById("customer-table");
+          const customerCount = customerTable.getElementsByTagName("tr").length - 1; 
+          document.getElementById("customer-count").innerHTML = customerCount;
           }
-        )
-      }
-    )
+        }
+      )
+    }
+  )
+  
+  
+  
+  function getCookieValueByName(name) {
+    var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+    return match ? match[2] : "";
+  }
+  const cookieValue = getCookieValueByName("is_login")
+  if(cookieValue!=="true"){
+    window.location.href = "/vender_login.html"
+  }
+  
+  </script>
+  <script>
+    
 
+    function noBack() {
+      window.history.forward()
+    }
+    noBack();
+    window.onload = noBack;
+    window.onpageshow = function (evt) { if (evt.persisted) noBack() }
+    window.onunload = function () { void (0) }
+
+
+
+    // Function to format 1 in 01
+    const zeroFill = n => {
+      return ('0' + n).slice(-2);
+    }
+
+    // Creates interval
+    const interval = setInterval(() => {
+      // Get current time
+      const now = new Date();
+
+      // Format date as in mm/dd/aaaa hh:ii:ss
+      const dateTime = zeroFill((now.getMonth() + 1)) + '/' + zeroFill(now.getUTCDate()) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+      // Display the date and time on the screen using div#date-time
+      document.getElementById('date-time').innerHTML = dateTime;
+    }, 1000);
 
   </script>
+
+  <script src="https://kit.fontawesome.com/2d18eb8bf2.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/index.js"></script>
+
 </body>
 
 </html>

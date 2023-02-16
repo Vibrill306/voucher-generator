@@ -38,7 +38,7 @@
     <div class="container-fluid">
       <div class="row" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); height: 55px; ">
 
-        <div class="col-md-2" style="height: 100vh;">
+        <div class="col-md-2" style="height: 100vh; ">
           <div class="logo-img" style="display: flex; justify-content: center;">
             <img src="images/logo-light.png" height="45px" width="50px" alt="">
           </div>
@@ -47,7 +47,9 @@
             <ul style="list-style: none;">
               <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li>
               <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
-                <a href="login_success.html"><i class="fa-solid fa-gauge"></i>&nbsp; Dashboard</a></li>
+                <a href="login_success.html" style="color: #444;"><i class="fa-solid fa-gauge"
+                    style="color: #444;"></i>&nbsp; Dashboard</a>
+              </li>
             </ul>
           </div>
           <div class="menu pt-3">
@@ -55,51 +57,35 @@
 
             <ul style="list-style: none;">
               <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">PAGES</li>
-              <!-- <li class="py-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px;"><a href="addVender.html"><i class="fa-solid fa-gauge"></i>&nbsp; Dashboard</a></li> -->
 
-              <nav class="navbar navbar-expand">
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                      <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-regular fa-user"></i> &nbsp;<span>Authentication</span> <i
-                          class="fa-solid fa-caret-down ms-5"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="login.html">Sign In</a></li>
-                        <li><a class="dropdown-item" href="#">Log out</a></li>
-                        <li><a class="dropdown-item" href="addVender.html">Add Vendor</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2"
+                    style="font-size: 15px; margin-bottom: 5px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a href="addVender.html" style="color: #444; "><i class="fa-solid fa-people-group"></i>&nbsp; Add
+                      Vendor</a>
+                  </li>
+                  <li class="pt-2"
+                    style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a href="allCustomers.html" style="color: #444;"><i class="fa-solid fa-people-group"></i>&nbsp; All
+                      Customers</a>
+                  </li>
+                  </li>
+                </ul>
+              </div>
 
-              <nav class="navbar navbar-expand">
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                      <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-gear"></i> &nbsp;<span> Profile</span> <i
-                          class="fa-solid fa-caret-down ms-5"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#"> Settings</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2"
+                    style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a onclick="window.location='/logout'" style="cursor:pointer; color: #444;"><i
+                        class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout</a>
+                  </li>
+                </ul>
+              </div>
 
-            </ul>
-          </div>
-          <div class="menu pt-3">
-            <ul style="list-style: none;">
-              <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">APPS</li>
-              <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px;"><a href="#"><i
-                    class="fa-solid fa-calendar-days"></i>&nbsp; Calender</a></li>
-              <li class="pt-3" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px;"><a href="#"><i
-                    class="fa-solid fa-file"></i>&nbsp; Documentation</a></li>
             </ul>
           </div>
         </div>
@@ -117,7 +103,8 @@
 
             <div class="form">
               <form class="d-flex" role="search" style="width: 120%;">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="text" id="myInput" class="search" onkeyup="myFunction()"
+                  placeholder="Search for names.." placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>
@@ -129,7 +116,7 @@
             style="display: flex; justify-content: space-between; align-items: center; width: 28%; height: 40px;">
 
             <div class="dropdown">
-              <i class="fa-solid fa-cube px-2 pt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+              <i class="fa-solid fa-link px-2 pt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                 style="cursor: pointer; font-size: large;"></i>
               <ul class="dropdown-menu">
                 <li class="text-center" style="color:#919da9; font-size: 14px; letter-spacing: 1px;">Go To Webapp</li>
@@ -137,28 +124,29 @@
                 <div class="web-list">
                   <li><a class="dropdown-item" href="https://www.vibrillhospitality.com"><i
                         class="fa-solid fa-globe"></i>&nbsp; www.vibrillhospitality.com</a></li>
-                  <li><a class="dropdown-item" href="https://www.vibrillhospitality.com"><i
-                        class="fa-solid fa-globe"></i>&nbsp; www.vibrill.com</a></li>
+                  <li><a class="dropdown-item" href="https://www.vibrill.com"><i class="fa-solid fa-globe"></i>&nbsp;
+                      www.vibrill.com</a></li>
                 </div>
 
               </ul>
             </div>
 
             <button class="btn btn-primary" id="btn-full-screen"
-              style="cursor: pointer; font-size: large; padding: 7px 10px; font-size: 14px;">Go Fullscreen</button>
+              style="cursor: pointer; font-weight: 500; font-size: large; padding: 10px 10px; font-size: 11px!important;">Go
+              Fullscreen</button>
 
             <div class="dropdown">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false"
                 style="padding: 3px 10px; display: flex; justify-content: space-between; align-items: center; background-color: silver; color: #343a40; font-size: 14px; font-family: sans-serif;">
                 <img src="images/man.png" height="30px" width="30px" alt=""> <span class="ps-1"
-                  style="color: #343a40;">Saksham Walia</span>
+                  style="color: #343a40;">Admin</span>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+                <li style="cursor:pointer"><a class="dropdown-item" onclick="window.location='/logout'"><i
+                      class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
               </ul>
             </div>
 
@@ -183,13 +171,11 @@
                     style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Vendors</strong>
                   </h5>
                   <div class="d-flex justify-content-between align-items-center">
-                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong>745</strong></p>
-                    <img src="images/customer-feedback.png" height="40px" width="40px" alt="">
+                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong><span
+                          id="vender-count"></span></strong></p>
+                    <img src="images/audience.png" height="40px" width="40px" alt="">
 
                   </div>
-                  <p class="card-text"><small class="text-muted"><span class="text-success"><strong><i
-                            class="fa-solid fa-up-right-from-square"></i> +29 %</strong></span> <span><b>than last
-                          week</b></span></small></p>
                 </div>
               </div>
 
@@ -204,39 +190,15 @@
                     style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Customer</strong>
                   </h5>
                   <div class="d-flex justify-content-between align-items-center">
-                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong>745</strong></p>
-                    <img src="images/customer-feedback.png" height="40px" width="40px" alt="">
+                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong><span
+                          id="customer-count"></span></strong></p>
+                    <img src="images/audience.png" height="40px" width="40px" alt="">
 
                   </div>
-                  <p class="card-text"><small class="text-muted"><span class="text-success"><strong><i
-                            class="fa-solid fa-up-right-from-square"></i> +29 %</strong></span> <span><b>than last
-                          week</b></span></small></p>
                 </div>
               </div>
 
             </div>
-            <!-- </div> -->
-            <!-- <div class="row"> -->
-            <div class="col-md-4">
-
-              <div class="card my-3">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase"
-                    style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Employee</strong>
-                  </h5>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong>745</strong></p>
-                    <img src="images/customer-feedback.png" height="40px" width="40px" alt="">
-
-                  </div>
-                  <p class="card-text"><small class="text-muted"><span class="text-success"><strong><i
-                            class="fa-solid fa-up-right-from-square"></i> +29 %</strong></span> <span><b>than last
-                          week</b></span></small></p>
-                </div>
-              </div>
-
-            </div>
-            <!-- </div> -->
           </div>
         </div>
 
@@ -244,215 +206,31 @@
           <div class="col-xl-12 pt-3">
             <div class="card">
               <div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1">Vender</h4>
+                <h4 class="card-title mb-0 flex-grow-1">Vendors</h4>
                 <div class="flex-shrink-0">
                   <div class="dropdown card-header-dropdown">
-                    <!-- <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="fw-semibold text-uppercase fs-12">Sort by:
-                                </span><span class="text-muted">Today<i class="mdi mdi-chevron-down ms-1"></i></span>
-                            </a> -->
-                    <!-- <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">Today</a>
-                                <a class="dropdown-item" href="#">Yesterday</a>
-                                <a class="dropdown-item" href="#">Last 7 Days</a>
-                                <a class="dropdown-item" href="#">Last 30 Days</a>
-                                <a class="dropdown-item" href="#">This Month</a>
-                                <a class="dropdown-item" href="#">Last Month</a>
-                            </div> -->
                   </div>
                 </div>
               </div><!-- end card header -->
 
               <div class="card-body">
-                <div class="table-responsive table-card">
-                  <table class="table table-centered align-middle table-nowrap mb-0">
-                    <thead class="text-muted table-light">
-                      <tr>
-                        <th scope="col">Purchase ID</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">OrderDate</th>
-                        <th scope="col">Vendor</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010331</a>
-                        </td>
-                        <td>
-                          Macbook Pro
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Terry White</div>
-                          </div>
-                        </td>
-                        <td>
-                          $658.00
-                        </td>
-                        <td>28 Oct, 2022</td>
-                        <td>Brazil</td>
-                        <td>
-                          <span class="badge badge-soft-success">Paid</span>
-                        </td>
-                      </tr><!-- end tr -->
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010331</a>
-                        </td>
-                        <td>
-                          Macbook Pro
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Terry White</div>
-                          </div>
-                        </td>
-                        <td>
-                          $658.00
-                        </td>
-                        <td>28 Oct, 2022</td>
-                        <td>Brazil</td>
-                        <td>
-                          <span class="badge badge-soft-success">Paid</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010331</a>
-                        </td>
-                        <td>
-                          Macbook Pro
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Terry White</div>
-                          </div>
-                        </td>
-                        <td>
-                          $658.00
-                        </td>
-                        <td>28 Oct, 2022</td>
-                        <td>Brazil</td>
-                        <td>
-                          <span class="badge badge-soft-success">Paid</span>
-                        </td>
-                      </tr>
+                <table id="vender-table">
+                  <tr>
+                    <th>S No.</th>
+                    <th>Company_Id</th>
+                    <th>Company Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>City</th>
+                    <!-- <th>Edit</th> -->
+                    <!-- <th>Status</th> -->
+                  </tr>
 
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010334</a>
-                        </td>
-                        <td>
-                          Bentwood Chair
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Ashley Silva</div>
-                          </div>
-                        </td>
-                        <td>
-                          $349.99
-                        </td>
-                        <td>31 Oct, 2022</td>
-                        <td>Argentina</td>
-                        <td>
-                          <span class="badge badge-soft-warning">Pending</span>
-                        </td>
-                      </tr><!-- end tr -->
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010335</a>
-                        </td>
-                        <td>
-                          Apple Headphone
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-9.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Scott Wilson</div>
-                          </div>
-                        </td>
-                        <td>
-                          $264.37
-                        </td>
-                        <td>01 Nov, 2022</td>
-                        <td>Jersey</td>
-                        <td>
-                          <span class="badge badge-soft-danger">Unpaid</span>
-                        </td>
-                      </tr><!-- end tr -->
-                      <tr>
-                        <td>
-                          <a href="#!" class="fw-medium link-primary">#TB010336</a>
-                        </td>
-                        <td>
-                          Smart Watch for Man's
-                        </td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 me-2">
-                              <img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-xs rounded-circle">
-                            </div>
-                            <div class="flex-grow-1">Heather Jimenez</div>
-                          </div>
-                        </td>
-                        <td>
-                          $741.98
-                        </td>
-                        <td>02 Nov, 2022</td>
-                        <td>Spain</td>
-                        <td>
-                          <span class="badge badge-soft-success">Paid</span>
-                        </td>
-                      </tr><!-- end tr -->
-                    </tbody>
-                  </table>
-                </div>
-                <div class="row align-items-center mt-4 pt-2 gy-2 text-center text-sm-start">
-                  <div class="col-sm">
-                    <div class="text-muted">
-                      Showing <span class="fw-semibold">6</span> of <span class="fw-semibold">25</span> Results
-                    </div>
-                  </div>
-                  <div class="col-sm-auto">
-                    <ul
-                      class="pagination pagination-separated pagination-sm mb-0 justify-content-center justify-content-sm-start">
-                      <li class="page-item disabled">
-                        <a href="#" class="page-link">←</a>
-                      </li>
-                      <li class="page-item">
-                        <a href="#" class="page-link">1</a>
-                      </li>
-                      <li class="page-item active">
-                        <a href="#" class="page-link">2</a>
-                      </li>
-                      <li class="page-item">
-                        <a href="#" class="page-link">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a href="#" class="page-link">→</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                  <tbody id="dataadmin">
+
+                  </tbody>
+                </table>
+
               </div>
             </div>
           </div>
@@ -474,6 +252,8 @@
   <!-- javaScript for login-success page -->
   <script>
 
+
+
     function noBack() {
       window.history.forward()
     }
@@ -482,28 +262,7 @@
     window.onpageshow = function (evt) { if (evt.persisted) noBack() }
     window.onunload = function () { void (0) }
 
-    fetch("/admin_dash").then(
-      res => {
-        res.json().then(
-          dataadmin => {
-            console.log(dataadmin);
-            if (dataadmin.length > 0) {
 
-              var temp = "";
-              dataadmin.forEach((itemData) => {
-                temp += "<tr>";
-                temp += "<td>" + itemData.company_id + "</td>";
-                temp += "<td>" + itemData.company_name + "</td>";
-                temp += "<td>" + itemData.email + "</td>";
-                temp += "<td>" + itemData.phone + "</td>";
-                temp += "<td>" + itemData.city + "</td>";
-              });
-              document.getElementById('dataadmin').innerHTML = temp;
-            }
-          }
-        )
-      }
-    )
 
     // Function to format 1 in 01
     const zeroFill = n => {
@@ -521,6 +280,79 @@
       // Display the date and time on the screen using div#date-time
       document.getElementById('date-time').innerHTML = dateTime;
     }, 1000);
+
+    fetch("/admin_dash").then(
+      res => {
+        res.json().then(
+          dataadmin => {
+            console.log(dataadmin);
+            if (dataadmin.length > 0) {
+
+              var temp = "";
+              dataadmin.forEach((itemData, i) => {
+                temp += "<tr>";
+                temp += "<td>" + `${i + 1}` + "</td>"
+                temp += "<td>" + itemData.company_id + " </td>";
+                temp += "<td>" + itemData.company_name + "</td>";
+                temp += "<td>" + itemData.email + "</td>";
+                temp += "<td>" + itemData.phone + "</td>";
+                temp += "<td>" + itemData.city + "</td>";
+                // temp += "<td>" +`<button id="delete-button">Delete</button>` + "</td>";
+              });
+
+              document.getElementById('dataadmin').innerHTML = temp;
+              const venderTable = document.getElementById("vender-table");
+              const venderCount = venderTable.getElementsByTagName("tr").length - 1;
+              document.getElementById("vender-count").innerHTML = venderCount;
+
+            }
+
+          }
+        )
+      }
+    )
+
+
+    fetch("/vender_dashb").then(
+      res => {
+        res.json().then(
+          data => {
+            // console.log(data);
+            const count = data.length;
+            document.getElementById("customer-count").innerHTML = count;
+          });
+      }
+    )
+
+
+
+    function getCookieValueByName(name) {
+      var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+      return match ? match[2] : "";
+    }
+    const cookieValue = getCookieValueByName("is_login")
+    if (cookieValue !== "true") {
+      window.location.href = "/login.html"
+    }
+
+    function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+
+
 
   </script>
 

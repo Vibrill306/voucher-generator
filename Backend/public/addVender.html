@@ -2,65 +2,362 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Success</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/login_success.css">
 </head>
 
 <body>
 
-    <div class="add-vender">
-        <div class="container">
-            <div class="row">
-                <h1 style="margin-top: 100px;">Vender Details</h1>
-                <form action="/vender" method="POST">
-                    <div class="row">
+  <div class="top-date-bar py-1 fw-bold"
+    style="display: flex; justify-content: space-between; color: white; background-color: #31404a;">
 
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Company Id</label>
-                            <input type="text" class="form-control" id="company_id" name="company_id"
-                                aria-describedby="emailHelp" required>
-                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                        </div>
-                        <div class=" col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name" name="company_name" required>
-                        </div>
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Phone No.</label>
-                            <input type="number" class="form-control" id="phone" name="phone" required>
-                        </div>
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">City</label>
-                            <input type="text" class="form-control" id="city" name="city" required>
-                        </div>
-                        <div class="col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Voucher</label>
-                            <select class="form-select" id="voucher" name="voucher" aria-label="Default select example"
-                                required>
-                                <option selected>Voucher</option>
-                                <option value="Movie Voucher" name="Movie Voucher" required>Movie Voucher</option>
-                                <option value="Resort Voucher" name="Resort Voucher" required>Resort Voucher</option>
-                                <option value="Holiday Voucher" name="Holiday Voucher" required>Holiday Voucher</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submit" value="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="date-time-parent ms-2"
+      style="display: flex; justify-content: space-evenly; align-items: center; font-size: 13px; color: #ffffff73;">
+      <i class="fa-solid fa-clock"></i>
+      <div id="date-time" class="ps-2"></div>
     </div>
+
+    <div class="col-md-4"
+      style="display: flex; justify-content: space-around; align-items: center; font-size: 13px; color: #ffffff73;">
+      <span><i class="fa-solid fa-envelope"></i> info@vibrillhospitality.com</span>
+      <span><i class="fa-solid fa-globe"></i> www.vibrillhospitality.com</span>
+    </div>
+
+    <div class="english-language me-2">
+      <span style="font-size: 13px; color: #ffffff73;"><i class="fa-solid fa-language"></i> English</span>
+    </div>
+
+  </div>
+
+  <div class="side-navbar pt-4">
+
+    <div class="container-fluid">
+      <div class="row" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); height: 55px; ">
+
+        <div class="col-md-2" style="height: 100vh; ">
+          <div class="logo-img" style="display: flex; justify-content: center;">
+            <img src="images/logo-light.png" height="45px" width="50px" alt="">
+          </div>
+
+          <div class="menu pt-3">
+            <ul style="list-style: none;">
+              <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li>
+              <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                <a href="login_success.html" style="color: #444;"><i class="fa-solid fa-gauge" style="color: #444;"></i>&nbsp; Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="menu pt-3">
+
+
+            <ul style="list-style: none;">
+              <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">PAGES</li>
+
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2" style="font-size: 15px; margin-bottom: 5px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a href="addVender.html" style="color: #444;"><i class="fa-solid fa-people-group"></i>&nbsp; Add Vendor</a></li>
+                    <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                      <a href="allCustomers.html" style="color: #444;"><i class="fa-solid fa-people-group"></i>&nbsp; All Customers</a></li>
+                    </li>
+                </ul>
+              </div>
+
+              <div class="menu pt-3">
+                <ul class="p-0 m-0" style="list-style: none;">
+                  <!-- <li style="color:#919da9; font-size: 11px; letter-spacing: 1px;" class="fw-bold">MENU</li> -->
+                  <li class="pt-2" style="font-size: 15px; font-family: sans-serif; letter-spacing: .5px; color: #31404a;">
+                    <a onclick="window.location='/logout'"  style="cursor:pointer; color: #444;"><i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout</a></li>
+                </ul>
+              </div>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-10"
+          style="display: flex; justify-content: space-between; align-items: center; height: 40px;">
+
+          <div class="left-menu"
+            style="display: flex; justify-content: space-between; align-items: center; width: 30%;">
+
+            <div class="bar"><i class="fa-solid fa-bars pt-2" style="cursor: pointer; font-size: large;"></i></div>
+
+
+
+
+            <div class="form">
+              <form class="d-flex" role="search" style="width: 120%;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+
+          </div>
+
+
+          <div class="right-menu"
+            style="display: flex; justify-content: space-between; align-items: center; width: 28%; height: 40px;">
+
+            <div class="dropdown">
+              <i class="fa-solid fa-cube px-2 pt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                style="cursor: pointer; font-size: large;"></i>
+              <ul class="dropdown-menu">
+                <li class="text-center" style="color:#919da9; font-size: 14px; letter-spacing: 1px;">Go To Webapp</li>
+
+                <div class="web-list">
+                  <li><a class="dropdown-item" href="https://www.vibrillhospitality.com"><i
+                        class="fa-solid fa-globe"></i>&nbsp; www.vibrillhospitality.com</a></li>
+                  <li><a class="dropdown-item" href="https://www.vibrill.com"><i
+                        class="fa-solid fa-globe"></i>&nbsp; www.vibrill.com</a></li>
+                </div>
+
+              </ul>
+            </div>
+
+            <button class="btn btn-primary" id="btn-full-screen"
+              style="cursor: pointer; font-weight: 500; font-size: large; padding: 10px 10px; font-size: 11px!important;">Go Fullscreen</button>
+
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="padding: 3px 10px; display: flex; justify-content: space-between; align-items: center; background-color: silver; color: #343a40; font-size: 14px; font-family: sans-serif;">
+                <img src="images/man.png" height="30px" width="30px" alt=""> <span class="ps-1"
+                  style="color: #343a40;">Admin</span>
+              </a>
+
+              <ul class="dropdown-menu">
+                
+                <li style="cursor:pointer"><a class="dropdown-item" onclick="window.location='/logout'" ><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="row offset-md-2">
+
+        <div class="col-md-12">
+          <div class="row">
+
+            <!-- <div class="row"> -->
+            <div class="col-md-4">
+
+              <div class="card my-3">
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase"
+                    style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Vendors</strong>
+                  </h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong><span id="vender-count"></span></strong></p>
+                    <img src="images/audience.png" height="40px" width="40px" alt="">
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- </div> -->
+            <!-- <div class="row"> -->
+            <div class="col-md-4">
+
+              <div class="card my-3">
+                <div class="card-body">
+                  <h5 class="card-title text-uppercase"
+                    style="font-size: 13px; color: #878a99; font-family: sans-serif;"><strong>Total Customer</strong>
+                  </h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text pt-1" style="color: #495057; font-size: 22px;"><strong><span id="customer-count"></span></strong></p>
+                    <img src="images/audience.png" height="40px" width="40px" alt="">
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 mb-5" >
+          <div class="col-xl-12 pt-3">
+            <div class="card">
+              <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Vendor Details</h4>
+                <div class="flex-shrink-0">
+                  <div class="dropdown card-header-dropdown">
+                  </div>
+                </div>
+              </div><!-- end card header -->
+
+              <div class="card-body">
+                <div class="add-vender">
+                    <div class="container">
+                        <div class="row">
+                            <!-- <h1 style="margin-top: 100px;">Vender Details</h1> -->
+                        <form action="/vender" method="POST">
+                            <div class="row">
+            
+                                <div class="col-lg-6 mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Company Id</label>
+                                    <input type="text" class="form-control" id="company_id" name="company_id" aria-describedby="emailHelp" placeholder="Company_Id" required>
+                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                                </div>
+                            <div class=" col-lg-6 mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Company Name</label>
+                              <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Company Name" required>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password
+                                " required>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Phone No.</label>
+                                <input type="number" class="form-control" id="phone" placeholder="Phone No." name="phone" required>
+                              </div>
+                              <div class="col-lg-6 mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">City</label>
+                                  <input type="text" class="form-control" placeholder="City" id="city" name="city" required>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Voucher</label>
+                                
+                                <div class="voucher" id="voucher" name="voucher">
+                                    <input type="checkbox" name="voucher1" value="Movie Voucher">
+                                    <label for="voucher1"> Movie Voucher</label><br>
+                                    <input type="checkbox" name="voucher2" value="Resort Voucher">
+                                    <label for="voucher2"> Resort Voucher</label><br>
+                                    <input type="checkbox" name="voucher3" value="Holiday Voucher">
+                                    <label for="voucher3"> Holiday Voucher</label><br><br>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submit" value="submit">Submit</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  <!-- javaScript for login-success page -->
+  <script>
+    
+
+    function noBack() {
+      window.history.forward()
+    }
+    noBack();
+    window.onload = noBack;
+    window.onpageshow = function (evt) { if (evt.persisted) noBack() }
+    window.onunload = function () { void (0) }
+
+
+
+    // Function to format 1 in 01
+    const zeroFill = n => {
+      return ('0' + n).slice(-2);
+    }
+
+    // Creates interval
+    const interval = setInterval(() => {
+      // Get current time
+      const now = new Date();
+
+      // Format date as in mm/dd/aaaa hh:ii:ss
+      const dateTime = zeroFill((now.getMonth() + 1)) + '/' + zeroFill(now.getUTCDate()) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+      // Display the date and time on the screen using div#date-time
+      document.getElementById('date-time').innerHTML = dateTime;
+    }, 1000);
+
+    fetch("/admin_dash").then(
+  res => {
+    res.json().then(
+      dataadmin => {
+        console.log(dataadmin);
+        
+
+        const count = dataadmin.length;
+          document.getElementById("vender-count").innerHTML = count;
+
+          if (dataadmin.length > 0) {
+
+          var temp = "";
+          dataadmin.forEach((itemData) => {
+            temp += "<tr>";
+            temp += "<td>" + itemData.company_id+" </td>";
+            temp += "<td>" + itemData.company_name + "</td>";
+            temp += "<td>" + itemData.email + "</td>";
+            temp += "<td>" + itemData.phone + "</td>";
+            temp += "<td>" + itemData.city + "</td>";
+            // temp += "<td>" +`<button id="delete-button">Delete</button>` + "</td>";
+          });
+          document.getElementById('dataadmin').innerHTML = temp;
+          }
+      }
+    )
+  }
+)
+
+
+fetch("/vender_dashb").then(
+    res => {
+      res.json().then(
+        data => {
+          // console.log(data);
+          const count = data.length;
+          document.getElementById("customer-count").innerHTML = count;
+  });
+        }
+      )
+
+
+
+function getCookieValueByName(name) {
+  var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? match[2] : "";
+}
+const cookieValue = getCookieValueByName("is_login")
+if(cookieValue!=="true"){
+  window.location.href = "/login.html"
+}
+
+
+
+  </script>
+
+  <script src="https://kit.fontawesome.com/2d18eb8bf2.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 

@@ -10,7 +10,10 @@ mongoose.connect(db_link).then(function(db){
 })
 
 const customerSchema = mongoose.Schema({
-    
+    company_id:{
+        type:String,
+        required:true
+    },
     name:{
         type:String,
         required:true
@@ -26,6 +29,11 @@ const customerSchema = mongoose.Schema({
         }
     },
     phone:{
+        type:String,
+        required:true,
+        minLength:10
+    },
+    age:{
         type:Number,
         required:true,
         minLength:10
@@ -39,6 +47,11 @@ const customerSchema = mongoose.Schema({
         voucher:['Movie Voucher','Resort Voucher','Holiday Voucher'],
         default:'Movie Voucher'
     },
+    status:{
+        type:String,
+        required:true,
+        default:'Unredeem'
+    }
 })
 
 

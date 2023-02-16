@@ -11,8 +11,12 @@
 }
 
 .container-first .container .row .col-md-5{
-  background:url('../images/col-md-5-texture.jpg');
-  height: 700px;
+  /* background:url('../images/login-bg.jpg'); */
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../images/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  
+  height: 500px;
   border-radius: 20px;
   opacity: .8;
 }
@@ -91,7 +95,11 @@ input[type=text], input[type=password] {
 }
 
 .container{
-  padding: 20px;
+  padding: 0px;
+}
+
+html{
+  background-color: rgba(190, 188, 188, 0.169);
 }
 
 

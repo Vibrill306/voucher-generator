@@ -1,20 +1,14 @@
 "use strict";
 const nodemailer = require("nodemailer");
 
-// async..await is not allowed in global scope, must use a wrapper
 module.exports.sendMail=async function sendMail(str,data) {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
-//   let testAccount = await nodemailer.createTestAccount();
-
-  // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false, 
     auth: {
-      user: 'krishna.vibrill@gmail.com', // generated ethereal user
-      pass: 'qrdksuwtxpyhghri', // generated ethereal password
+      user: 'krishna.vibrill@gmail.com', 
+      pass: 'qrdksuwtxpyhghri',
     },
   });
 
@@ -22,7 +16,7 @@ module.exports.sendMail=async function sendMail(str,data) {
   if(str=='signup'){
     Osubject=`Thank you for Signing up ${data.name}`;
     Ohtml=`
-    <h1>Welcome to practice_app</h1>
+    <h1>Welcome to Vibrill Voucher</h1>
     Hope you have good time !
     Here are your details-
     Name - ${data.company_name}<br>
@@ -39,14 +33,26 @@ module.exports.sendMail=async function sendMail(str,data) {
   } else if(str == 'customer'){
     Osubject=`Welcome ${data.name}`;
     Ohtml=`
-    <h1>Vibrill voucher</h1>
-    Name - ${data.name}<br>
-    Email - ${data.email}<br>
-    Phone No. -${data.phone}<br>
-    City - ${data.city}<br>
-    Voucher - ${data.voucher}<br>
-    <b>This is your ${data.voucher} from Vibrill Hospitality</b>
-    `
+    <div class="coupon" style="border: 5px dotted #bbb;
+    width: 80%;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 600px;">
+  <div class="container" style="padding: 2px 16px;
+  background-color: #f1f1f1;">
+    <h3>Vibrill Hospitality</h3>
+  </div>
+  <img src="../public/images/man.png" alt="Avatar" style="width:100%;">
+  <div class="container" style="background-color:white;">
+    <h2 ><b>${data.voucher}</b></h2> 
+    <p >${data.name}<br>${data.email}<br>${data.phone}<br>${data.city}</p>
+  </div>
+  <div class="container">
+    <p>Use Promo Code: <span class="promo" style="background: #ccc;
+    padding: 3px;">BOH232</span></p>
+    <p class="expire" style="color: red;">Expires: Jan 03, 2021</p>
+  </div>
+</div>`;
   }
   else if(str=="resetpassword"){
     Osubject=`Reset Password`;
@@ -56,21 +62,16 @@ module.exports.sendMail=async function sendMail(str,data) {
     ${data.resetPasswordLink}`
   }
 
-  // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"Vibrill Voucher" <krishna.vibrill@gmail.com>', // sender address
     to: data.email, // list of receivers
     subject: Osubject, // Subject line
     // text: "Hello world?", // plain text body
     html: Ohtml, // html body
+    attachments:[
+        {filename:'Voucher.pdf', path:'./Voucher.pdf'}
+      ]
   });
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
-//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
-
-// sendMail().catch(console.error);
